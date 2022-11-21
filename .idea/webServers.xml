@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="9d316ecf-94c9-4bad-bc65-3db405201e4e" name="Lerning" url="https://cq08883.tw1.ru">
+        <fileTransfer rootFolder="/home/c/cq08883/public_html" accessType="SFTP" host="185.114.245.124" port="22" sshConfigId="d28ac1fa-8886-4275-b052-782ff54ba5b1" sshConfig="cq08883@185.114.245.124:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
