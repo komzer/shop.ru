@@ -1,8 +1,8 @@
 <?php
-//
-//namespace komz;
-//
-//class Catalog
-//{
-//
-//}
+
+namespace komz;
+
+class Catalog
+{
+
+}

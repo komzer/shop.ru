@@ -14,18 +14,18 @@ require_once(__DIR__ . '/NameForMe/functions.php');
 require_once(__DIR__ . '/NameForMe/class/SoapClientLogging.php');
 
 #для подключения к soap
-require_once(__DIR__ . 'NameForMe/class/SoapConnect.php');
+#require_once(__DIR__ . 'NameForMe/class/SoapConnect.php');
 
 #---------------------------------------------
 #Подключаем , что конкретно относится к этому проекту
 
-#контакты
+#конcnfynsы
 require_once(__DIR__ . '/komz/constant.php');
 
 #require_once(__DIR__ .'/komz.hide.php);
 
 #автоподключение классов  Highload болоков  !!!error
-require_once(__DIR__ . '/komz/autoloadHighLoadIBlock.php');
+#require_once(__DIR__ . '/komz/autoloadHighLoadBlock.php');
 
 #втоподключеник классов проекта. Обычно такие пишут для облегчения повторяющизся операций
 require_once(__DIR__ . '/komz/autoloadProjectClass.php');
