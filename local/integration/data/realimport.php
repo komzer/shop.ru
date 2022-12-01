@@ -1,6 +1,10 @@
 <?php
 require ($_SERVER["DOCUMENT_ROOT"] . "/bitrix/modules/main/include/prolog_before.php");
+<<<<<<< HEAD
 #дефолты
+=======
+
+>>>>>>> origin/master
 function xml2aray($xmlObject, $out=array()){
     foreach ( (array)$xmlObject as $index => $node)
         $out[$index] =(is_object($node))? xml2aray($node):$node;
@@ -10,12 +14,20 @@ function xml2aray($xmlObject, $out=array()){
 
 $el = new CIBlockElement;
 
+<<<<<<< HEAD
 $_xml = simplexml_load_file('data/test.xml');
+=======
+$_xml = simplexml_load_file('data/exhange.html');
+>>>>>>> origin/master
 
 foreach ($_xml -> product as $product) {
     $product = xml2aray($product);
     pre($product);
+<<<<<<< HEAD
 /*
+=======
+
+>>>>>>> origin/master
     #СВОЙСТВА
     $props = [
       'ID_START' => $product['OLDID'],
@@ -23,6 +35,7 @@ foreach ($_xml -> product as $product) {
       'VIKRASKA' => $product['VIKRASKA']['VARIANT'],
     ];
 
+<<<<<<< HEAD
     #img
     foreach ($product['IMAGE']['OPTION'] as  $IMAGE){
         $props['PHOTO'][]= CFile::MakeFileArray($IMAGE);
@@ -30,12 +43,23 @@ foreach ($_xml -> product as $product) {
     */
 
 #GetList    основные данные
+=======
+    foreach ($product['IMAGE']['OPTION'] as  $IMAGE){
+        $props['PHOTO'][]= CFile::MakeFileArray($IMAGE);
+    }
+
+
+>>>>>>> origin/master
     $arFields = [
         "NAME" =>$product ['NAME'],
         "CODE" => $product['CODE'],
         "IBLOCK_SECTION_ID"=>$product['SECTION_ID'],
         "DETAIL_TEXT"=>$product['DESCRIPTION'],
+<<<<<<< HEAD
         "IBLOCK_ID"=>BLK_ID_PRODUCTS,
+=======
+        "IBLOCK_ID"=>BLK_ID_INFOBLOCK_PRODUCTS,
+>>>>>>> origin/master
         "PROPERTY_VALUES"=>$props,
         "ACTIVE"=> 'Y',
         ];
