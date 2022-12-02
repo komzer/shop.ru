@@ -1,6 +1,8 @@
 <!DOCTYPE html>
+
 <html lang="ru">
 <head>
+
     <meta charset="utf-8">
     <title><? $APPLICATION->ShowTitle(); ?></title>
     <? $APPLICATION->ShowHead(); ?>
@@ -8,24 +10,35 @@
     <meta name="viewport" content="width=1250">
 
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,400italic,500,500italic,700,700italic&subset=latin,cyrillic" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="css/application.css">
+
     <!--[if lt IE 9]>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 </head>
 
 <?
+use Bitrix\Main\Page\Asset;
+
 $_asset = Asset::getInstance();
-$_asset -> addCss(CUtil::GetAdditionalFileURL(SITE_TEMPLATE_PATH . "/css/application.css"));
-$_asset -> addJs(SITE_TEMPLATE_PATH . "/js/libs.js");
-$_asset -> addJs(SITE_TEMPLATE_PATH . "/js/common.js");
-$_asset -> addJs(SITE_TEMPLATE_PATH . "/js/allpage.js");
-CJScore::Init(array('ajax'));
+$_asset ::getInstance()-> addCss(CUtil::GetAdditionalFileURL(SITE_TEMPLATE_PATH . "/css/application.css"));
+$_asset -> addJs(CUtil::GetAdditionalFileURL(SITE_TEMPLATE_PATH . "/js/jquery.min.js"));
+$_asset -> addJs(CUtil::GetAdditionalFileURL(SITE_TEMPLATE_PATH . "/js/application.min.js"));
+
+
 ?>
+
+
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
 <body>
 <!--[if lt IE 8]>
 <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 <![endif]-->
+<div id="panel">
+    <? $APPLICATION->ShowPanel();?>
+</div>
 
 <div class="main">
 
