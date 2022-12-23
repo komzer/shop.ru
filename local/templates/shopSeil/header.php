@@ -1,3 +1,4 @@
+<? use Bitrix\Main\Page\Asset; ?>
 <!DOCTYPE html>
 
 <html lang="ru">
@@ -17,10 +18,10 @@
 </head>
 
 <?
-use Bitrix\Main\Page\Asset;
+
 
 $_asset = Asset::getInstance();
-$_asset ::getInstance()-> addCss(CUtil::GetAdditionalFileURL(SITE_TEMPLATE_PATH . "/css/application.css"));
+$_asset -> addCss(CUtil::GetAdditionalFileURL(SITE_TEMPLATE_PATH . "/css/application.css"));
 $_asset -> addJs(CUtil::GetAdditionalFileURL(SITE_TEMPLATE_PATH . "/js/jquery.min.js"));
 $_asset -> addJs(CUtil::GetAdditionalFileURL(SITE_TEMPLATE_PATH . "/js/application.min.js"));
 
@@ -65,7 +66,7 @@ $_asset -> addJs(CUtil::GetAdditionalFileURL(SITE_TEMPLATE_PATH . "/js/applicati
                                 </div>
                                 <div class="image-block mini" itemscope itemtype="http://schema.org/ImageObject">
                                     <a href="#">
-                                        <img src="temp/product-1.png" alt="" itemprop="image">
+                                        <img src="<?=SITE_TEMPLATE_PATH?>/temp/product-1.png" alt="" itemprop="image">
                                     </a>
                                 </div>
                                 <div class="favorites-cart">
@@ -87,7 +88,7 @@ $_asset -> addJs(CUtil::GetAdditionalFileURL(SITE_TEMPLATE_PATH . "/js/applicati
                                 </div>
                                 <div class="image-block mini" itemscope itemtype="http://schema.org/ImageObject">
                                     <a href="#">
-                                        <img src="temp/product-2.png" alt="" itemprop="image">
+                                        <img src="<?=SITE_TEMPLATE_PATH?>/temp/product-2.png" alt="" itemprop="image">
                                     </a>
                                 </div>
                                 <div class="favorites-cart">
@@ -109,7 +110,7 @@ $_asset -> addJs(CUtil::GetAdditionalFileURL(SITE_TEMPLATE_PATH . "/js/applicati
                                 </div>
                                 <div class="image-block mini" itemscope itemtype="http://schema.org/ImageObject">
                                     <a href="#">
-                                        <img src="temp/product-3.png" alt="" itemprop="image">
+                                        <img src="<?=SITE_TEMPLATE_PATH?>/temp/product-3.png" alt="" itemprop="image">
                                     </a>
                                 </div>
                                 <div class="favorites-cart">
@@ -165,47 +166,33 @@ $_asset -> addJs(CUtil::GetAdditionalFileURL(SITE_TEMPLATE_PATH . "/js/applicati
         <div class="wrapper header-nav">
             <div class="container">
                 <a href="#" class="logo" itemprop="url">
-                    <img src="images/logo.png" alt="" itemprop="logo">
+                    <img src="<?=SITE_TEMPLATE_PATH?>/images/logo.png" alt="" itemprop="logo">
                     <meta itemprop="name" content="Shopselle">
                     <meta itemprop="address" content="Москва">
                 </a>
-                <nav itemscope itemtype="http://schema.org/SiteNavigationElement">
-                    <ul>
-                        <li class="sub-menu popap-show active">
-                            <a href="#" itemprop="url">Главная</a>
-                            <div class="popap-block">
-                                <ul>
-                                    <li><a href="#" itemprop="url">Пример длинного меню</a></li>
-                                    <li><a href="#" itemprop="url">Меню 2</a></li>
-                                    <li><a href="#" itemprop="url">Меню 3</a></li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li><a href="#" itemprop="url">О нас</a></li>
-                        <li><a href="#" itemprop="url">Условия</a></li>
-                        <li><a href="#" itemprop="url">FAQ</a></li>
-                        <li class="sub-menu popap-show">
-                            <a href="#" itemprop="url">Страницы</a>
-                            <div class="popap-block">
-                                <ul>
-                                    <li><a href="#" itemprop="url">Меню 1</a></li>
-                                    <li><a href="#" itemprop="url">Меню 2</a></li>
-                                    <li><a href="#" itemprop="url">Меню 3</a></li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="sub-menu popap-show">
-                            <a href="#" itemprop="url">Контакты</a>
-                            <div class="popap-block">
-                                <ul>
-                                    <li><a href="#" itemprop="url">Меню 1</a></li>
-                                    <li><a href="#" itemprop="url">Меню 2</a></li>
-                                    <li><a href="#" itemprop="url">Меню 3</a></li>
-                                </ul>
-                            </div>
-                        </li>
-                    </ul>
-                </nav>
+
+
+                <?$APPLICATION->IncludeComponent(
+                    "bitrix:menu",
+                    "main_top",
+                    array(
+                        "ALLOW_MULTI_SELECT" => "N",
+                        "CHILD_MENU_TYPE" => "left",
+                        "DELAY" => "N",
+                        "MAX_LEVEL" => "1",
+                        "MENU_CACHE_GET_VARS" => array(
+                        ),
+                        "MENU_CACHE_TIME" => "3600",
+                        "MENU_CACHE_TYPE" => "N",
+                        "MENU_CACHE_USE_GROUPS" => "Y",
+                        "ROOT_MENU_TYPE" => "komztop",
+                        "USE_EXT" => "N",
+                        "COMPONENT_TEMPLATE" => ".default"
+                    ),
+                    false
+                );?>
+
+
 
                 <div class="cart-icon active">
                     <a href="#"><span>+4</span></a>
@@ -223,14 +210,14 @@ $_asset -> addJs(CUtil::GetAdditionalFileURL(SITE_TEMPLATE_PATH . "/js/applicati
                         </li>
                         <li>
                             <a href="#" itemprop="url">Ноутбуки</a>
-                            <img src="temp/menu-top.png" alt="">
+                            <img src="<?=SITE_TEMPLATE_PATH?>/temp/menu-top.png" alt="">
                         </li>
                         <li>
                             <a href="#" itemprop="url">Планшеты</a>
                         </li>
                         <li>
                             <a href="#" itemprop="url">Телефоны</a>
-                            <img src="temp/menu-new.png" alt="">
+                            <img src="<?=SITE_TEMPLATE_PATH?>/temp/menu-new.png" alt="">
                         </li>
                         <li>
                             <a href="#" itemprop="url">Гаджеты</a>
