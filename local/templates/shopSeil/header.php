@@ -175,26 +175,52 @@ $_asset -> addJs(CUtil::GetAdditionalFileURL(SITE_TEMPLATE_PATH . "/js/applicati
                 <?$APPLICATION->IncludeComponent(
                     "bitrix:menu",
                     "main_top",
-                    array(
+                    Array(
                         "ALLOW_MULTI_SELECT" => "N",
                         "CHILD_MENU_TYPE" => "left",
+                        "COMPONENT_TEMPLATE" => ".default",
                         "DELAY" => "N",
                         "MAX_LEVEL" => "1",
-                        "MENU_CACHE_GET_VARS" => array(
-                        ),
+                        "MENU_CACHE_GET_VARS" => array(),
                         "MENU_CACHE_TIME" => "3600",
                         "MENU_CACHE_TYPE" => "N",
                         "MENU_CACHE_USE_GROUPS" => "Y",
-                        "ROOT_MENU_TYPE" => "komztop",
-                        "USE_EXT" => "N",
-                        "COMPONENT_TEMPLATE" => ".default"
-                    ),
-                    false
+                        "ROOT_MENU_TYPE" => "mytop",
+                        "USE_EXT" => "N"
+                    )
                 );?>
 
 
 
                 <div class="cart-icon active">
+                    <?$APPLICATION->IncludeComponent(
+                        "bitrix:sale.basket.basket.line",
+                        ".default",
+                        Array(
+                            "COMPONENT_TEMPLATE" => ".default",
+                            "HIDE_ON_BASKET_PAGES" => "Y",
+                            "MAX_IMAGE_SIZE" => "70",
+                            "PATH_TO_AUTHORIZE" => "",
+                            "PATH_TO_BASKET" => SITE_DIR."personal/cart/",
+                            "PATH_TO_ORDER" => SITE_DIR."personal/order/make/",
+                            "PATH_TO_PERSONAL" => SITE_DIR."personal/",
+                            "PATH_TO_PROFILE" => SITE_DIR."personal/",
+                            "PATH_TO_REGISTER" => SITE_DIR."login/",
+                            "POSITION_FIXED" => "N",
+                            "SHOW_AUTHOR" => "N",
+                            "SHOW_DELAY" => "N",
+                            "SHOW_EMPTY_VALUES" => "Y",
+                            "SHOW_IMAGE" => "Y",
+                            "SHOW_NOTAVAIL" => "N",
+                            "SHOW_NUM_PRODUCTS" => "Y",
+                            "SHOW_PERSONAL_LINK" => "Y",
+                            "SHOW_PRICE" => "Y",
+                            "SHOW_PRODUCTS" => "N",
+                            "SHOW_REGISTRATION" => "N",
+                            "SHOW_SUMMARY" => "Y",
+                            "SHOW_TOTAL_PRICE" => "Y"
+                        )
+                    );?>
                     <a href="#"><span>+4</span></a>
                 </div>
                 <!--пустая без active и a-->
