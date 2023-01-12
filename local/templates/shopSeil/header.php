@@ -195,7 +195,7 @@ $_asset -> addJs(CUtil::GetAdditionalFileURL(SITE_TEMPLATE_PATH . "/js/applicati
                 <div class="cart-icon active">
                     <?$APPLICATION->IncludeComponent(
                         "bitrix:sale.basket.basket.line",
-                        ".default",
+                        "main_basket",
                         Array(
                             "COMPONENT_TEMPLATE" => ".default",
                             "HIDE_ON_BASKET_PAGES" => "Y",
@@ -213,15 +213,15 @@ $_asset -> addJs(CUtil::GetAdditionalFileURL(SITE_TEMPLATE_PATH . "/js/applicati
                             "SHOW_IMAGE" => "Y",
                             "SHOW_NOTAVAIL" => "N",
                             "SHOW_NUM_PRODUCTS" => "Y",
-                            "SHOW_PERSONAL_LINK" => "Y",
+                            "SHOW_PERSONAL_LINK" => "N",
                             "SHOW_PRICE" => "Y",
                             "SHOW_PRODUCTS" => "N",
                             "SHOW_REGISTRATION" => "N",
                             "SHOW_SUMMARY" => "Y",
-                            "SHOW_TOTAL_PRICE" => "Y"
+                            "SHOW_TOTAL_PRICE" => "N"
                         )
                     );?>
-                    <a href="#"><span>+4</span></a>
+
                 </div>
                 <!--пустая без active и a-->
                 <!--<div class="cart-icon"></div>-->
@@ -262,3 +262,8 @@ $_asset -> addJs(CUtil::GetAdditionalFileURL(SITE_TEMPLATE_PATH . "/js/applicati
         </div>
     </header>
     <!--end Header-->
+
+    <div class="content home">
+
+        <!--Основной контент-->
+        <main class="container">

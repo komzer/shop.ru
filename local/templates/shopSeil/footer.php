@@ -1,4 +1,8 @@
 
+</main>
+
+</div>
+
 </div>
 <!--Footer-->
 <footer id="footer">
