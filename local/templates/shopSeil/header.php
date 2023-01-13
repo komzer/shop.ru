@@ -195,7 +195,7 @@ $_asset -> addJs(CUtil::GetAdditionalFileURL(SITE_TEMPLATE_PATH . "/js/applicati
                 <div class="cart-icon active">
                     <?$APPLICATION->IncludeComponent(
                         "bitrix:sale.basket.basket.line",
-                        "main_basket",
+                        "basket_main",
                         Array(
                             "COMPONENT_TEMPLATE" => ".default",
                             "HIDE_ON_BASKET_PAGES" => "Y",

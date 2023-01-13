@@ -58,7 +58,7 @@ class BuyStepsPreview extends CBitrixComponent
            $this->arResult['ITEMS'][$element['ID']]=$element;
         }
 
-        pre($this->arResult,1);
+        //pre($this->arResult,1);
     }
 /**   protected function  actionView(){
         $this->arResult['ITEMS']=[];
